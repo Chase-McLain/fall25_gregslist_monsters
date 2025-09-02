@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="./assets/img/logo.png">
+  <link rel="icon" href="https://i1.sndcdn.com/artworks-000480773955-v348rz-t500x500.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
@@ -15,8 +15,8 @@
 <body data-bs-theme="light">
   <header>
     <nav class="navbar bg-codeworks text-light gap-2 px-2">
-      <img src="./assets/img/logo.png" height="45" alt="" loading="lazy">
-      <div><b>gregslist_async</b></div>
+      <img src="https://i1.sndcdn.com/artworks-000480773955-v348rz-t500x500.jpg" height="45" alt="greg" loading="lazy">
+      <div><b>gregslist</b></div>
       <!-- NOTE do not remove this id if you want users to be able to log in -->
       <div class="ms-auto" id="authstate"></div>
     </nav>
@@ -30,61 +30,46 @@
       <button onclick="app.monstersController.toggleMonsterSection()" class="btn btn-primary">
         Monsters 👹
       </button>
+      <button onclick="" class="btn btn-primary">
+        Houses /\
+      </button>
     </section>
 
     <!-- TODO houses go here! -->
 
-    <section id="cars-section" class="container-fluid d-none">
+
+
+    <section id="house-section" class="container-fluid">
       <div class="row my-3">
         <div class="col-md-6">
           <div id="car-form-placeholder">
-            Please log in so you can list your car
+            Please log in so you can list your house
           </div>
-          <form onsubmit="app.carsController.submitCar()" id="car-form" class="sticky-top d-none">
+          <form onsubmit="app.carsController.submitHouse()" id="house-form" class="sticky-top d-none">
             <div>
-              <label for="car-make">Car Make</label>
-              <input id="car-make" type="text" maxlength="500" required name="make" class="w-100">
+              <label for="house-year">House year</label>
+              <input id="house-year" type="number" required name="year" class="w-100">
             </div>
             <div>
-              <label for="car-model">Car Model</label>
-              <input id="car-model" type="text" maxlength="500" required name="model" class="w-100">
+              <label for="bedrooms">Bedrooms</label>
+              <input id="bedrooms" type="number" required name="bedrooms" class="w-100">
             </div>
             <div>
-              <label for="car-year">Car Year</label>
+              <label for="bathrooms">Bathrooms</label>
               <!-- TODO it would be good to automate setting the max here -->
-              <input id="car-year" type="number" min="1886" max="2026" required name="year" class="w-100">
+              <input id="bathrooms" type="number" required name="bathrooms" class="w-100">
             </div>
             <div>
-              <label for="car-price">Car Price (in USD)</label>
-              <input id="car-price" type="number" min="0" max="1000000" required name="price" class="w-100">
+              <label for="house-price">Car Price (in USD)</label>
+              <input id="house-price" type="number" min="0" max="10000000" required name="price" class="w-100">
             </div>
             <div>
-              <label for="car-img-url">Car Image URL</label>
-              <input id="car-img-url" type="url" maxlength="500" required name="imgUrl" class="w-100">
+              <label for="house-img">Car Image URL</label>
+              <input id="house-img" type="url" maxlength="500" required name="img" class="w-100">
             </div>
             <div>
-              <label for="car-description">Car Description</label>
-              <textarea name="description" id="car-description" maxlength="500" class="w-100"></textarea>
-            </div>
-            <div>
-              <label for="car-engine-type">Car Engine Type</label>
-              <select name="engineType" id="car-engine-type">
-                <option value="unknown" selected>Unknown</option>
-                <option value="2 stroke">2 stroke</option>
-                <option value="4 cylinder">4 cylinder</option>
-                <option value="v6">v6</option>
-                <option value="v8">v8</option>
-                <option value="v10">v10</option>
-                <option value="v12">v12</option>
-                <option value="small">small</option>
-                <option value="medium">medium</option>
-                <option value="large">large</option>
-                <option value="chuncko">chuncko</option>
-              </select>
-            </div>
-            <div>
-              <label for="car-color">Car Color</label>
-              <input id="car-color" type="color" name="color">
+              <label for="house-description">Housse description</label>
+              <textarea name="description" id="house-description" maxlength="500" class="w-100"></textarea>
             </div>
             <button type="reset">Reset</button>
             <button type="submit">Submit</button>
@@ -92,25 +77,98 @@
         </div>
         <div class="col-6 d-none d-md-block">
           <img
-            src="https://images.unsplash.com/photo-1533558701576-23c65e0272fb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyJTIwa2V5c3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="hand holding car keys" class="img-fluid">
+            src="https://images.unsplash.com/photo-1579286102752-282ce1c4f9bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVybnQlMjBkb3duJTIwaG91c2V8ZW58MHx8MHx8fDI%3D"
+            alt="outshopped" class="img-fluid">
         </div>
       </div>
-      <div id="car-listings" class="row">
-        <!-- ANCHOR cars -->
-      </div>
-    </section>
 
-    <section class="container-fluid">
-      <div id="monster-list" class="row d-none">
-        <!-- ANCHOR monsters -->
-      </div>
-    </section>
+      <section id="house-listings" class="row container-fluid">
+
+      </section>
+
+
+
+
+
+
+
+      <section id="cars-section" class="container-fluid d-none">
+        <div class="row my-3">
+          <div class="col-md-6">
+            <div id="car-form-placeholder">
+              Please log in so you can list your car
+            </div>
+            <form onsubmit="app.carsController.submitCar()" id="car-form" class="sticky-top d-none">
+              <div>
+                <label for="car-make">Car Make</label>
+                <input id="car-make" type="text" maxlength="500" required name="make" class="w-100">
+              </div>
+              <div>
+                <label for="car-model">Car Model</label>
+                <input id="car-model" type="text" maxlength="500" required name="model" class="w-100">
+              </div>
+              <div>
+                <label for="car-year">Car Year</label>
+                <!-- TODO it would be good to automate setting the max here -->
+                <input id="car-year" type="number" min="1886" max="2026" required name="year" class="w-100">
+              </div>
+              <div>
+                <label for="car-price">Car Price (in USD)</label>
+                <input id="car-price" type="number" min="0" max="1000000" required name="price" class="w-100">
+              </div>
+              <div>
+                <label for="car-img-url">Car Image URL</label>
+                <input id="car-img-url" type="url" maxlength="500" required name="imgUrl" class="w-100">
+              </div>
+              <div>
+                <label for="car-description">Car Description</label>
+                <textarea name="description" id="car-description" maxlength="500" class="w-100"></textarea>
+              </div>
+              <div>
+                <label for="car-engine-type">Car Engine Type</label>
+                <select name="engineType" id="car-engine-type">
+                  <option value="unknown" selected>Unknown</option>
+                  <option value="2 stroke">2 stroke</option>
+                  <option value="4 cylinder">4 cylinder</option>
+                  <option value="v6">v6</option>
+                  <option value="v8">v8</option>
+                  <option value="v10">v10</option>
+                  <option value="v12">v12</option>
+                  <option value="small">small</option>
+                  <option value="medium">medium</option>
+                  <option value="large">large</option>
+                  <option value="chuncko">chuncko</option>
+                </select>
+              </div>
+              <div>
+                <label for="car-color">Car Color</label>
+                <input id="car-color" type="color" name="color">
+              </div>
+              <button type="reset">Reset</button>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="col-6 d-none d-md-block">
+            <img
+              src="https://images.unsplash.com/photo-1533558701576-23c65e0272fb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyJTIwa2V5c3xlbnwwfHwwfHx8MA%3D%3D"
+              alt="hand holding car keys" class="img-fluid">
+          </div>
+        </div>
+        <div id="car-listings" class="row">
+          <!-- ANCHOR cars -->
+        </div>
+      </section>
+
+      <section class="container-fluid">
+        <div id="monster-list" class="row d-none">
+          <!-- ANCHOR monsters -->
+        </div>
+      </section>
   </main>
 
   <footer class="text-bg-dark">
     <div class="text-center">
-      <p class="mb-0"><small>Made with <i class="mdi mdi-heart text-pink"></i> by CodeWorks</small></p>
+      <p class="mb-0"><small>Made with <i class="mdi mdi-heart text-pink"></i> by Supreme Coding Wizard</small></p>
     </div>
   </footer>
 

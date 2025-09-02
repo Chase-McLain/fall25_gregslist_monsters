@@ -5,7 +5,7 @@ import { Pop } from "../utils/Pop.js";
 
 export class CarsController {
   constructor() {
-    console.log('cars controller is ready!🚗🚗');
+    // console.log('cars controller is ready!🚗🚗');
     AppState.on('cars', this.drawCars)
     AppState.on('identity', this.showCarForm)
 
